@@ -1,3 +1,4 @@
 # data_structure_and_algorithm_1
 
--test with -f push
+- see fetch and push origin with "git remote -v"
+- "git push -f origin main" for forcing push
