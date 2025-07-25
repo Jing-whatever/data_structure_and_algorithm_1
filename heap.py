@@ -166,11 +166,33 @@ class Heap:
                 self.sift_down_until(0, len(self.items)-1-i) # sift down exludes the swapped items at thh end of the list             
             return self.items
 
-myheap = Heap()
+class PriotityQueue(Heap): # Inherits from heap
+
+    def __init__(self):
+        super().__init__() # User 'super()' to refer to the parent class, and treat it as an external function'
+        
+    def length(self):
+        return len(self.items)
+
+    def enqueue(self, new_value):        
+        return self.insert(new_value)
+    
+    def dequeue(self):
+        return self.extract_min()
+    
+    def peek(self):
+        return self.get_min()
+ 
+    def change_priority(self, value, new_value):
+        return self.update_by_value(value, new_value)
+    
+
+mypqueue = PriotityQueue()
 for i in random.sample(range(0,100),15):
-    myheap.items.append(i)
-print(myheap, '\n')    
-myheap.heapify()
-print(myheap, '\n')
-sorted_list = myheap.heap_sort()
+    mypqueue.items.append(i)
+print(mypqueue, '\n')    
+mypqueue.heapify()
+print(mypqueue, '\n')
+print(mypqueue.length(), '\n')
+sorted_list = mypqueue.heap_sort()
 print(sorted_list, '\n')
