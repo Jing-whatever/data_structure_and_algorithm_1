@@ -186,7 +186,6 @@ class PriotityQueue(Heap): # Inherits from heap
     def change_priority(self, value, new_value):
         return self.update_by_value(value, new_value)
     
-
 mypqueue = PriotityQueue()
 for i in random.sample(range(0,100),15):
     mypqueue.items.append(i)
